@@ -1,0 +1,238 @@
+{
+	"wards" : [
+		{	"id": 1,
+			"medical": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 2,
+			"surgery": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 3,
+			"orthopedics": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 4,
+			"peadiatrics": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 5,
+			"obs n gyn": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 6,
+			"lying-in": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 7,
+			"o&g theather": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 8,
+			"o&g recovery": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 9,
+			"labour": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 10,
+			"NICU": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 11,
+			"A&E main": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 12,
+			"A&nE annex": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		},
+		{	"id": 13,
+			"pead emergency": {
+				"ward state": {
+					"statistics": [
+						{"date": "2026-06-01",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0},
+							{"date": "2026-06-02",
+							"admissions": 10, "discharges": 12, "transins": 5,
+							"transout": 0, "critically-ill": 0, "deaths": 0,
+							"rem": 24, "male": 11, "females": 9, "theater": 4,
+							"staff on duty": 3, "students": 0}
+						]
+				}
+			}
+		}
+	]
+}
