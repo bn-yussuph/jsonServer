@@ -15,8 +15,8 @@
     <a class="navbar-brand" href="#">Navbar</a>
     <div class="navbar-expand" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Wards</a>
+        <a class="nav-link active" aria-current="page" href="#/home">Home</a>
+        <a class="nav-link" href="#/ward">Wards</a>
         <a class="nav-link" href="#">Statistics</a>
         <a class="nav-link" href="#">login</a>
       </div>
@@ -105,13 +105,9 @@
 	</div>
 </div>
 
-
-
-	<!-- <home></home>
-
-	<ward-form></ward-form> -->
-
-
+	<div ng-view>
+		<p> Place for single page views</p>
+	</div>
 
 	<footer class="mt-auto bg-light py-3 text-center">
 		<p>All rights reserved. Buraque inc.</p>
@@ -124,5 +120,6 @@
 	<script src="services/wardStateSrvc.js"></script>
 	<script src="services/statsSrvc.js"></script>
 	<script src="constants/constants.js"></script>
+	<script src="factory/wardHelpers.js"></script>
 </body>
 </html>
