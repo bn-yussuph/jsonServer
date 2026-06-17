@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	var app = angular.module('wardApp', []);
+	var app = angular.module('wardApp');
 
 	app.controller('wardCtrl', ['$scope', 'wardsSrvc', 'wardStateSrvc', 'statsSrvc', 'wardHelpers',
 		function ($scope, wardsSrvc, wardStateSrvc, statsSrvc, wardHelpers) {

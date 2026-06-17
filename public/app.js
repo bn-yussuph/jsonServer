@@ -1,14 +1,16 @@
-(function(){
+(function () {
     'use strict';
 
     var app = angular.module('wardApp', ['ngRoute']);
 
-    app.config(['$routeProvider', function($routeProvider) {
+    app.config(['$routeProvider', '$locationProvider', function ($routeProvider,  $locationProvider) {
+        // console.log("$routeProvider invoked");
+        $locationProvider.hashPrefix('');
         $routeProvider
             .when('/', {
                 component: 'home'
             })
-            .when('/ward', {
+            .when('/wards', {
                 templateUrl: 'components/wardForm/wardForm.tpl.html',
                 controller: 'wardCtrl'
             })
@@ -19,5 +21,5 @@
             .otherwise({
                 redirectTo: '/'
             });
-    }   ]);
+    }]);
 })()
