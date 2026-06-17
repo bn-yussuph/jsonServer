@@ -1,0 +1,15 @@
+<div>
+    <p>Add ward</p>
+    <form name="wardForm" ng-submit="$ctrl.submitForm($ctrl.ward)" novalidate>
+        <label>Ward ID:</label>
+        <input type="text" name="wardId" ng-model="$ctrl.ward.wardId" required >
+        <br/>
+        <label>Ward name:</label>
+        <input type="text" name="wardName" ng-model="$ctrl.ward.name" required >
+        <br/>
+        <label>Ward capacity:</label>
+        <input type="text" name="wardCapacity" ng-model="$ctrl.ward.BedCapacity" required >
+        <br/>
+        <button type="submit">Submit</button>
+    </form>
+</div>
