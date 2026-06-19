@@ -7,37 +7,7 @@
 			$scope.title = "Ward Application";
 			// $scope.ward = {};
 
-			this.$onInit = function () {
-				wardsSrvc.getWard()
-					.then(function (data) {
-						// console.log("onInit fired", data);
-						$scope.wards = data;
-					})
-					.catch(function (error) {
-						$scope.errorMessage = 'Failed to get data';
-					});
-
-				wardStateSrvc.getAllWardsState()
-					.then(function (data) {
-						// console.log("onInit fired", data);
-						$scope.wardState = data;
-						$scope.statsWithNames = wardHelpers
-							.replaceIdwithNames($scope.wards, $scope.wardState)
-						console.log("Stats with ward names", $scope.statsWithNames);
-					})
-					.catch(function (error) {
-						$scope.errorMessage = 'Failed to get data';
-					});
-
-				statsSrvc.getAllStats()
-					.then(function (data) {
-						// console.log("onInit fired", data);
-						$scope.wardStats = data;
-					})
-					.catch(function (error) {
-						$scope.errorMessage = 'Failed to get data';
-					});
-			}
+			
 
 			$scope.submitForm = function () {
 				return wardsSrvc.addData()

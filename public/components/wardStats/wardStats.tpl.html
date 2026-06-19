@@ -1,0 +1,245 @@
+<div class="container">
+  <div>
+    <h1 class="text-center">ADD WARD STATES</h1>
+    <form
+      name="wardStatsForm"
+      ng-submit="$ctrl.submitStats($ctrl.stats)"
+      class=""
+      novalidate
+    >
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Date</label>
+          <input
+            type="date"
+            class="form-control"
+            name="date"
+            ng-model="$ctrl.stats.date"
+            ng-class="{'is-invalid': wardStatsForm.date.$invalid && wardStatsForm.date.$touched}"
+            required
+          />
+          <div class="invalid-feedback" ng-show="wardStatsForm.date.$error">
+            Enter a valid date.
+          </div>
+        </div>
+
+        <div class="form-group col mb-3">
+          <label for="ward" class="col-form-label">Ward</label>
+          <select
+            name="ward"
+            class="form-select"
+            id="ward"
+            ng-model="$ctrl.stats.wardId"
+            ng-class="{'is-invalid': wardStatsForm.ward.$invalid && wardStatsForm.ward.$touched}"
+            required
+          >
+            <option ng-repeat="ward in $ctrl.wards" value="{{ward.id}}">
+              {{ward.name}}
+            </option>
+          </select>
+
+          <div class="invalid-feedback" ng-show="wardStatsForm.ward.$error">
+            Please select a ward.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Admissions</label>
+          <input
+            type="number"
+            class="form-control"
+            name="admissions"
+            ng-model="$ctrl.stats.admissions"
+            ng-class="{'is-invalid': wardStatsForm.admissions.$invalid && wardStatsForm.admissions.$touched}"
+            required
+          />
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.admissions.$error"
+          >
+            Enter a valid number.
+          </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">Discharges</label>
+          <input
+            type="number"
+            ng-class="{'is-invalid': wardStatsForm.discharges.$invalid && wardStatsForm.discharges.$touched}"
+            class="form-control"
+            name="discharges"
+            ng-model="$ctrl.stats.discharges"
+            required
+          />
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.discharges.$error"
+          >
+            Enter a valid number.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Trans ins</label>
+          <input
+            type="number"
+            class="form-control"
+            name="transins"
+            ng-model="$ctrl.stats.transins"
+            ng-class="{'is-invalid': wardStatsForm.transins.$invalid && wardStatsForm.transins.$touched}"
+            required
+          />
+          <div class="invalid-feedback" ng-show="wardStatsForm.transins.$error">
+            Enter a valid number.
+          </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">Transouts</label>
+          <input
+            type="number"
+            class="form-control"
+            name="transouts"
+            ng-model="$ctrl.stats.transouts"
+            ng-class="{'is-invalid': wardStatsForm.transouts.$invalid && wardStatsForm.transouts.$touched}"
+            required
+          />
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.transouts.$error"
+          >
+            Enter a valid number.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Critically Ill</label>
+          <input
+            type="number"
+            class="form-control"
+            name="criticallyIll"
+            ng-model="$ctrl.stats.criticallyIll"
+            ng-class="{'is-invalid': wardStatsForm.criticallyIll.$invalid && wardStatsForm.criticallyIll.$touched}"
+            required
+          />
+            <div
+                class="invalid-feedback"
+                ng-show="wardStatsForm.criticallyIll.$error"
+            >
+              Enter a valid number.
+            </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">Deaths</label>
+          <input
+            type="number"
+            class="form-control"
+            name="deaths"
+            ng-model="$ctrl.stats.deaths"
+            ng-class="{'is-invalid': wardStatsForm.deaths.$invalid && wardStatsForm.deaths.$touched}"
+            required
+          />
+            <div class="invalid-feedback" ng-show="wardStatsForm.deaths.$error">
+                Enter a valid number.
+            </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">No of theatre cases</label>
+          <input
+            type="number"
+            class="form-control"
+            name="theatre"
+            ng-model="$ctrl.stats.theatre"
+            ng-class="{'is-invalid': wardStatsForm.theatre.$invalid && wardStatsForm.theatre.$touched}"
+            required
+          />
+            <div class="invalid-feedback" ng-show="wardStatsForm.theatre.$error">
+                Enter a valid number.
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">No. of males</label>
+          <input
+            type="number"
+            class="form-control"
+            name="males"
+            ng-model="$ctrl.stats.males"
+            ng-class="{'is-invalid': wardStatsForm.males.$invalid && wardStatsForm.males.$touched}"
+            required
+          />
+            <div class="invalid-feedback" ng-show="wardStatsForm.males.$error">
+                Enter a valid number.
+            </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">No. of females</label>
+          <input
+            type="number"
+            class="form-control"
+            name="females"
+            ng-model="$ctrl.stats.females"
+            ng-class="{'is-invalid': wardStatsForm.females.$invalid && wardStatsForm.females.$touched}"
+            required
+          />
+            <div class="invalid-feedback" ng-show="wardStatsForm.females.$error">
+                Enter a valid number.
+            </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Staff on Duty</label>
+          <input
+            type="number"
+            class="form-control"
+            name="staffOnDuty"
+            ng-model="$ctrl.stats.staffOnDuty"
+            ng-class="{'is-invalid': wardStatsForm.staffOnDuty.$invalid && wardStatsForm.staffOnDuty.$touched}"
+            required
+          />
+            <div
+                class="invalid-feedback"
+                ng-show="wardStatsForm.staffOnDuty.$error"
+            >
+              Enter a valid number.
+            </div>
+        </div>
+
+        <div class="form-group col">
+          <label class="col-form-label">Students</label>
+          <input
+            type="number"
+            class="form-control"
+            name="students"
+            ng-model="$ctrl.stats.students"
+            ng-class="{'is-invalid': wardStatsForm.students.$invalid && wardStatsForm.students.$touched}"
+            required
+          />
+            <div
+                class="invalid-feedback"
+                ng-show="wardStatsForm.students.$error"
+            >
+              Enter a valid number.
+            </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" ng-disabled="wardStatsForm.$invalid">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

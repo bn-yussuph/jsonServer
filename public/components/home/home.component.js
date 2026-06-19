@@ -9,10 +9,29 @@
 
 			}
 		});
+	homeController.$inject = ['$scope', 'wardsSrvc', 'wardStateSrvc', 'statsSrvc'];
+	function homeController($scope, wardsSrvc, wardStateSrvc, statsSrvc) {
+
+        this.$onInit = function () {
+            
+            wardsSrvc.getAllWardsWithStates()
+                .then(function (data) {
+                    console.log("onInit fired", data);
+                    $scope.wardWithStates = data;
+                })
+                .catch(function (error) {
+                    $scope.errorMessage = 'Failed to get data';
+                });
 
 
-	homeController.$inject = [];
-	function homeController() {
-		// body...
-	}
+            statsSrvc.getAllStats()
+                .then(function (data) {
+                    $scope.wardStats = data;
+                })
+                .catch(function (error) {
+                    $scope.errorMessage = 'Failed to get stats';
+                });
+        }
+    }
+
 })()

@@ -1,96 +1,68 @@
 {
   "wards": [
     {
-      "wardId": 1,
       "name": "medical",
-      "BedCapacity": 40,
-      "id": "1"
+      "BedCapacity": "40",
+      "id": "WqZe0_A2U-g"
     },
     {
-      "wardId": 2,
-      "name": "surgery",
-      "BedCapacity": 40,
-      "id": "2"
+      "name": "general surgery",
+      "BedCapacity": "40",
+      "id": "Qe8hyRT-1eY"
     },
     {
-      "wardId": 3,
-      "name": "orthopedics",
-      "BedCapacity": 40,
-      "id": "3"
-    },
-    {
-      "wardId": 4,
-      "name": "peadiatrics",
-      "BedCapacity": 40,
-      "id": "4"
-    },
-    {
-      "wardId": 5,
-      "name": "obs n gyn",
-      "BedCapacityy": 40,
-      "id": "5"
-    },
-    {
-      "wardId": 6,
-      "name": "lying-in",
-      "BedCapacity": 40,
-      "id": "6"
-    },
-    {
-      "wardId": 8,
-      "name": "obs n gyn recovery",
-      "BedCapacity": 40,
-      "id": "8"
-    },
-    {
-      "wardId": 9,
-      "name": "labour",
-      "BedCapacity": 40,
-      "id": "9"
-    },
-    {
-      "BedCapacity": 10,
-      "name": "ICU",
-      "wardId": 11,
-      "id": "11"
-    },
-    {
-      "wardId": 12,
-      "name": "emergency main",
-      "BedCapacity": 40,
-      "id": "12"
-    },
-    {
-      "wardId": 14,
-      "name": "Burns",
-      "capacity": "8",
-      "id": "15"
-    },
-    {
-      "wardId": 17,
-      "name": "Theatre",
-      "BedCapacity": "6",
-      "id": "17"
-    },
-    {
-      "wardId": "7",
-      "name": "Emergency",
+      "name": "emergency",
       "BedCapacity": "20",
-      "id": "7"
+      "id": "xchREte_4qg"
+    },
+    {
+      "name": "NICU",
+      "BedCapacity": 35,
+      "id": "_CUv8QwNqL8"
+    },
+    {
+      "name": "ICU",
+      "BedCapacity": 10,
+      "id": "AhEQpPrl7kE"
+    },
+    {
+      "name": "Burns",
+      "BedCapacity": 6,
+      "id": "ewHI_25e3bE"
+    },
+    {
+      "name": "obs",
+      "BedCapacity": 10,
+      "id": "K457ASUFLR0"
+    },
+    {
+      "name": "lying-in",
+      "BedCapacity": 19,
+      "id": "tJrVsbo5hC8"
+    },
+    {
+      "name": "labour",
+      "BedCapacity": 10,
+      "id": "F5rzYZhjX-o"
+    },
+    {
+      "name": "Orthopedics",
+      "BedCapacity": 40,
+      "id": "P2xNd1UDuXY"
     }
   ],
-  "state": [
+  "states": [
     {
       "date": "2026-06-01",
-      "wardId": 2,
+      "wardId": "WqZe0_A2U-g",
       "admissions": 10,
       "discharges": 12,
       "transins": 5,
-      "transout": 0,
-      "critically-ill": 0,
+      "transouts": 0,
+      "criticallyIll": 0,
       "deaths": 0,
       "rem": 24,
-      "male": 11,
+      "males": 11,
       "females": 9,
       "theater": 4,
       "staffOnDuty": 3,
@@ -99,26 +71,73 @@
     },
     {
       "date": "2026-06-02",
-      "wardId": 1,
+      "wardId": "Qe8hyRT-1eY",
       "admissions": 10,
       "discharges": 12,
       "transins": 5,
-      "transout": 0,
-      "critically-ill": 0,
+      "transouts": 0,
+      "criticallyIll": 0,
       "deaths": 0,
       "rem": 24,
-      "male": 11,
+      "males": 11,
       "females": 9,
       "theater": 4,
       "staffOnDuty": 3,
       "students": 0,
       "id": "CAos7Grx1QI"
+    },
+    {
+      "date": "2026-06-19",
+      "wardId": "P2xNd1UDuXY",
+      "admissions": 20,
+      "discharges": 5,
+      "transins": 6,
+      "transouts": 0,
+      "criticallyIll": 0,
+      "deaths": 0,
+      "theatre": 6,
+      "males": 14,
+      "females": 8,
+      "staffOnDuty": 2,
+      "students": 4,
+      "id": "PapYHYP5vdI"
+    },
+    {
+      "wardId": "AhEQpPrl7kE",
+      "admissions": 0,
+      "discharges": 0,
+      "transins": 0,
+      "transouts": 0,
+      "criticallyIll": 2,
+      "deaths": 0,
+      "theatre": 0,
+      "males": 1,
+      "females": 1,
+      "staffOnDuty": 2,
+      "students": 1,
+      "id": "j5d6P0z0uf0"
+    },
+    {
+      "date": "2026-06-19",
+      "wardId": "ewHI_25e3bE",
+      "admissions": 6,
+      "discharges": 2,
+      "transins": 0,
+      "transouts": 2,
+      "criticallyIll": 0,
+      "deaths": 0,
+      "theatre": 0,
+      "males": 3,
+      "females": 2,
+      "staffOnDuty": 2,
+      "students": 0,
+      "id": "nTIWs2mz-M4"
     }
   ],
   "stats": [
     {
       "date": "2026-02-02",
-      "wardId": 1,
+      "stateId": "7DOwja25CP8",
       "stats": {
         "Asphyxia": 10,
         "NNJ": 3,
@@ -129,7 +148,7 @@
     },
     {
       "date": "2026-02-03",
-      "wardId": 10,
+      "stateId": "CAos7Grx1QI",
       "stats": {
         "Asphyxia": 10,
         "NNJ": 3,

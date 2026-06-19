@@ -1,15 +1,63 @@
 <div>
-    <p>Add ward</p>
-    <form name="wardForm" ng-submit="$ctrl.submitForm($ctrl.ward)" novalidate>
-        <label>Ward ID:</label>
-        <input type="text" name="wardId" ng-model="$ctrl.ward.wardId" required >
-        <br/>
-        <label>Ward name:</label>
-        <input type="text" name="wardName" ng-model="$ctrl.ward.name" required >
-        <br/>
-        <label>Ward capacity:</label>
-        <input type="text" name="wardCapacity" ng-model="$ctrl.ward.BedCapacity" required >
-        <br/>
-        <button type="submit">Submit</button>
-    </form>
+  <h1 class="text-center">List of wards</h1>
+  <div>
+    <table class="table">
+      <tr>
+        <th>Ward ID</th>
+        <th>Ward Name</th>
+        <th>Ward Capacity</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="ward in $ctrl.wards">
+        <td>{{ ward.id}}</td>
+        <td>{{ ward.name}}</td>
+        <td>{{ ward.BedCapacity}}</td>
+        <td>
+          <a href="" ng-click="$ctrl.deleteWard(ward.id)">Delete</a>
+          |
+          <a>Edit</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="text-center">
+  <p>ADD WARD</p>
+  <form name="wardForm" ng-submit="$ctrl.submitForm(wardForm)" novalidate>
+    <div class="row">
+      <div class="form-group col mb-3">
+        <label class="col-form-label">Ward name:</label>
+        <input
+          type="text"
+          name="wardName"
+          class="form-control"
+          ng-model="$ctrl.ward.name"
+          ng-minlength="3"
+          ng-class="{'is-invalid': wardForm.wardName.$invalid && wardForm.wardName.$touched}"
+          placeholder="ward name"
+          required
+        />
+        <div class="invalid-feedback" ng-show="wardForm.wardName.$error">
+            Enter a valid name, minimum 3 characters.
+          </div>
+      </div>
+      <div class="form-group col">
+        <label class="col-form-label">Ward capacity:</label>
+        <input
+          type="number"
+          name="wardCapacity"
+          class="form-control"
+          placeholder="no. of beds"
+          ng-model="$ctrl.ward.BedCapacity"
+          ng-class="{'is-invalid': wardForm.wardCapacity.$invalid && wardForm.wardCapacity.$touched}"
+          required
+        />
+        <div class="invalid-feedback" ng-show="wardForm.wardCapacity.$error">
+            Enter a valid number greater than zero.
+          </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"  ng-disabled="wardForm.$invalid">Submit</button>
+  </form>
 </div>

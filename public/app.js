@@ -1,25 +1,35 @@
 (function () {
     'use strict';
 
-    var app = angular.module('wardApp', ['ngRoute']);
+    var app = angular.module('wardApp', ['ui.router']);
 
-    app.config(['$routeProvider', '$locationProvider', function ($routeProvider,  $locationProvider) {
-        // console.log("$routeProvider invoked");
-        $locationProvider.hashPrefix('');
-        $routeProvider
-            .when('/', {
-                component: 'home'
+    app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/home');
+
+        // Define application states
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                component: 'home',
+                resolve: {}
             })
-            .when('/wards', {
-                templateUrl: 'components/wardForm/wardForm.tpl.html',
-                controller: 'wardCtrl'
+            .state('wards', {
+                url: '/wards',
+                component: 'wardForm',
+                resolve: {
+                    wards: function(wardsSrvc){
+                        return wardsSrvc.getAllWards();
+                    }
+                }
             })
-            .when('/stats', {
-                templateUrl: 'views/stats.html',
-                controller: 'wardCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
+            .state('statistics', {
+                url: '/statistics',
+                component: 'wardStats',
+                resolve: {
+                    wards: function(wardsSrvc){
+                        return wardsSrvc.getAllWards();
+                    }
+                }
             });
     }]);
 })()

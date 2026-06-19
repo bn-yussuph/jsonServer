@@ -7,10 +7,10 @@
 
 
 	wardStateSrvcFxn.$inject = ['$http', 'BASE_URL'];
-	function wardStateSrvcFxn($http, BASE_URL){
+	function wardStateSrvcFxn($http, BASE_URL) {
 
-		this.getAllWardsState = function (argument) {
-			return $http.get(BASE_URL + 'state')
+		this.getAllWardsState = function () {
+			return $http.get(BASE_URL + 'states')
 				.then(function (res) {
 					console.log(res.data)
 					return res.data;
@@ -22,7 +22,7 @@
 		}
 
 		this.getWardStateById = function (wardId) {
-			return $http.get(BASE_URL + 'state?wardId=' + wardId )
+			return $http.get(BASE_URL + 'states?wardId=' + wardId)
 				.then(function (res) {
 					console.log(res)
 					return res.data;
@@ -40,7 +40,7 @@
 					date: date
 				}
 			}
-			return $http.get(BASE_URL + 'state', params)
+			return $http.get(BASE_URL + 'states', params)
 				.then(function (res) {
 					console.log(res)
 					return res.data;
@@ -51,8 +51,8 @@
 				});
 		}
 
-		this.addWardState = function(payload){
-			return $http.put(BASE_URL + 'state', payload)
+		this.addWardState = function (payload) {
+			return $http.post(BASE_URL + 'states', payload)
 				.then(function (res) {
 					console.log(res)
 					return res.data;
@@ -63,14 +63,14 @@
 				});
 		}
 
-		this.deleteWardStete = function(wardId, date){
+		this.deleteWardStete = function (wardId, date) {
 			var params = {
 				params: {
 					wardId: wardId,
 					date: date
 				}
 			}
-			return $http.delete(BASE_URL + 'state', params)
+			return $http.delete(BASE_URL + 'states', params)
 				.then(function (res) {
 					console.log(res)
 					return res.data;
