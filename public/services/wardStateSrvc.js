@@ -24,11 +24,11 @@
 		this.getWardStateById = function (wardId) {
 			return $http.get(BASE_URL + 'states?wardId=' + wardId)
 				.then(function (res) {
-					console.log(res)
+					// console.log(res)
 					return res.data;
 				})
 				.catch(function (error) {
-					console.log(error);
+					// console.log(error);
 					throw error;
 				});
 		}

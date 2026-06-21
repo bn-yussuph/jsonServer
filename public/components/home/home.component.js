@@ -6,7 +6,7 @@
 			templateUrl: 'components/home/home.tpl.html',
 			controller: homeController,
 			bindings: {
-
+                wards: '<'
 			}
 		});
 	homeController.$inject = ['$scope', 'wardsSrvc', 'wardStateSrvc', 'statsSrvc'];
@@ -16,7 +16,7 @@
             
             wardsSrvc.getAllWardsWithStates()
                 .then(function (data) {
-                    console.log("onInit fired", data);
+                    // console.log("onInit fired", data);
                     $scope.wardWithStates = data;
                 })
                 .catch(function (error) {

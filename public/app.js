@@ -11,7 +11,20 @@
             .state('home', {
                 url: '/home',
                 component: 'home',
-                resolve: {}
+                resolve: {
+                    wards: function(wardsSrvc){
+                        return wardsSrvc.getAllWards();
+                    }
+                }
+            })
+            .state('home.wardstatesdetail', {
+                url: '/{wardId}',
+                component: 'wardStatesDetail',
+                resolve: {
+                    wardState: function($stateParams,  wardStateSrvc){
+                        return wardStateSrvc.getWardStateById($stateParams.wardId);
+                    }
+                }
             })
             .state('wards', {
                 url: '/wards',

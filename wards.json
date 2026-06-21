@@ -1,21 +1,6 @@
 {
   "wards": [
     {
-      "name": "medical",
-      "BedCapacity": "40",
-      "id": "WqZe0_A2U-g"
-    },
-    {
-      "name": "general surgery",
-      "BedCapacity": "40",
-      "id": "Qe8hyRT-1eY"
-    },
-    {
-      "name": "emergency",
-      "BedCapacity": "20",
-      "id": "xchREte_4qg"
-    },
-    {
       "name": "NICU",
       "BedCapacity": 35,
       "id": "_CUv8QwNqL8"
@@ -54,11 +39,12 @@
   "states": [
     {
       "date": "2026-06-01",
-      "wardId": "WqZe0_A2U-g",
+      "wardId": null,
       "admissions": 10,
       "discharges": 12,
       "transins": 5,
       "transouts": 0,
+      "referred": 0,
       "criticallyIll": 0,
       "deaths": 0,
       "rem": 24,
@@ -71,11 +57,12 @@
     },
     {
       "date": "2026-06-02",
-      "wardId": "Qe8hyRT-1eY",
+      "wardId": null,
       "admissions": 10,
       "discharges": 12,
       "transins": 5,
       "transouts": 0,
+      "referred": 0,
       "criticallyIll": 0,
       "deaths": 0,
       "rem": 24,
@@ -93,6 +80,7 @@
       "discharges": 5,
       "transins": 6,
       "transouts": 0,
+      "referred": 0,
       "criticallyIll": 0,
       "deaths": 0,
       "theatre": 6,
@@ -108,6 +96,7 @@
       "discharges": 0,
       "transins": 0,
       "transouts": 0,
+      "referred": 0,
       "criticallyIll": 2,
       "deaths": 0,
       "theatre": 0,
@@ -120,12 +109,15 @@
     {
       "date": "2026-06-19",
       "wardId": "ewHI_25e3bE",
+      "previous": 10,
       "admissions": 6,
       "discharges": 2,
       "transins": 0,
       "transouts": 2,
+      "referred": 0,
       "criticallyIll": 0,
       "deaths": 0,
+      "remaining": 15,
       "theatre": 0,
       "males": 3,
       "females": 2,

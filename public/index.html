@@ -22,7 +22,7 @@
     class="container-fluid"
   >
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="nav navbar mb-3 bg-primary border-bottom border-body">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <div class="navbar-expand" id="navbarNavAltMarkup">
@@ -49,84 +49,7 @@
     </header>
 
     <ui-view></ui-view>
-    <!-- <div class="container-fluid text-center">
-      <div class="row">
-        <div class="col-3">
-          <h1>Wards</h1>
-          <table class="table table-striped">
-            <tr>
-              <th>Ward Name</th>
-              <th>Capacity</th>
-              <th>Actions</th>
-            </tr>
-            <tr ng-repeat="ward in wards">
-              <td>{{ ward.name}}</td>
-              <td>{{ ward.BedCapacity}}</td>
-              <td>
-                <a href="#">Delete</a>
-                <span></span>
-						<a href="#">Edit</a>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="col">
-          <div>
-            <h1>Statistics</h1>
-            <table class="table">
-              <tr>
-                <th>Date</th>
-                <th>Ward ID</th>
-                <th>Admissions</th>
-                <th>Discharges</th>
-                <th>Transins</th>
-                <th>Transouts</th>
-                <th>Remaining</th>
-              </tr>
-              <tr ng-repeat="state in wardState">
-                <td>{{ state.date }}</td>
-                <td>{{ state.wardId}}</td>
-                <td>{{ state.admissions}}</td>
-                <td>{{ state.discharges}}</td>
-                <td>{{ state.transins}}</td>
-                <td>{{ state.transout}}</td>
-                <td>{{ state.admissions}}</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="col-3">
-          <h1>Summaries</h1>
-          <div>
-            <div class="text-center" ng-repeat="stats in wardStats">
-              <div class="bg-primary row">
-                <div class="col">
-                  <p>Date: {{stats.date}}</p>
-                </div>
-                <div class="col">
-                  <p>Ward ID: {{stats.wardId}}</p>
-                </div>
-              </div>
-
-              <div class="row text-center">
-                <div class="col">
-                  <table class="table table-striped">
-                    <tr>
-                      <th>Statistic</th>
-                      <th>Value</th>
-                    </tr>
-                    <tr ng-repeat="(key, value) in stats.stats">
-                      <td>{{ key }}</td>
-                      <td>{{ value }}</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+   
 
     <footer class="mt-auto bg-light py-3 text-center">
       <p>All rights reserved. Buraque inc. 2026</p>
@@ -137,6 +60,7 @@
     <script src="components/wardForm/wardForm.component.js"></script>
     <script src="components/home/home.component.js"></script>
     <script src="components/wardStats/wardStats.component.js"></script>
+    <script src="components/wardStatesDetail/wardStatesDetail.component.js"></script>
     <script src="services/wardStateSrvc.js"></script>
     <script src="services/statsSrvc.js"></script>
     <script src="constants/constants.js"></script>

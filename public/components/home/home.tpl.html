@@ -1,25 +1,20 @@
 <div class="container-fluid text-center">
+  
   <div class="row">
-    <div class="col-3">
+    <aside class="col-2">
+     <div class="nav text-start">
       <h1>WARDS</h1>
-      <table class="table table-striped">
-        <tr>
-          <th>WARD NAME</th>
-          <th>CAPACITY</th>
-          <th>ACTIONS</th>
-        </tr>
-        <tr ng-repeat="ward in wardWithStates">
-          <td>{{ ward.name}}</td>
-          <td>{{ ward.BedCapacity}}</td>
-          <td>
-            <a href="#">Delete</a>
-            <!-- <span></span>
-              <a href="#">Edit</a> -->
-          </td>
-        </tr>
-      </table>
+      <ul class="nav flex-column">
+        <li class="nav-item"  ng-repeat="ward in $ctrl.wards">
+          <a class="nav-link" aria-current="page" href="#" ui-sref="home.wardstatesdetail({wardId: ward.id})"
+                ui-sref-active="active">{{ward.name | uppercase}}</a>
+        </li>
+      </ul>
     </div>
+    </aside>
+     
     <div class="col">
+      <ui-view></ui-view>
       <div>
         <h1>STATTISTICS</h1>
         <div ng-repeat="ward in wardWithStates">

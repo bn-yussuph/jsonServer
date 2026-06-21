@@ -11,6 +11,7 @@
         <div class="form-group col mb-3">
           <label class="col-form-label">Date</label>
           <input
+            id="date"
             type="date"
             class="form-control"
             name="date"
@@ -18,6 +19,7 @@
             ng-class="{'is-invalid': wardStatsForm.date.$invalid && wardStatsForm.date.$touched}"
             required
           />
+           <!-- <label for="date" class="col-form-label">Date</label> -->
           <div class="invalid-feedback" ng-show="wardStatsForm.date.$error">
             Enter a valid date.
           </div>
@@ -48,6 +50,7 @@
         <div class="form-group col mb-3">
           <label class="col-form-label">Admissions</label>
           <input
+            id="admissions"
             type="number"
             class="form-control"
             name="admissions"
@@ -55,6 +58,7 @@
             ng-class="{'is-invalid': wardStatsForm.admissions.$invalid && wardStatsForm.admissions.$touched}"
             required
           />
+          <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
           <div
             class="invalid-feedback"
             ng-show="wardStatsForm.admissions.$error"
@@ -112,6 +116,21 @@
             class="invalid-feedback"
             ng-show="wardStatsForm.transouts.$error"
           >
+            Enter a valid number.
+          </div>
+        </div>
+
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Referred</label>
+          <input
+            type="number"
+            class="form-control"
+            name="referred"
+            ng-model="$ctrl.stats.referred"
+            ng-class="{'is-invalid': wardStatsForm.referred.$invalid && wardStatsForm.referred.$touched}"
+            required
+          />
+          <div class="invalid-feedback" ng-show="wardStatsForm.referred.$error">
             Enter a valid number.
           </div>
         </div>
