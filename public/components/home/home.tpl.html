@@ -17,15 +17,14 @@
         </ul>
       </div>
     </aside>
-   
+
+
     <div class="col">
       <ui-view></ui-view>
       <div ng-hide="$ctrl.hasContent">
         <h1>STATTISTICS</h1>
-        <div ng-repeat="ward in wardWithStates">
-          <div ng-show="ward.states.length">
-            <h2>{{ ward.name}}</h2>
-            <table class="table">
+        <div>
+            <table class="table table-bordered">
             <thead>
               <tr class="text-start">
                 <th scope="col" class="vertical-header">DATE</th>
@@ -44,9 +43,9 @@
                 <th scope="col" class="vertical-header">STUDENTS</th>
               </tr>
             </thead>
-            <tbody>
-              <tr ng-repeat="state in ward.states">
-              
+            <tbody ng-repeat="ward in wardWithStates">
+              <tr class="text-center" ng-show="ward.states.length" ><td colspan="14">{{ward.name}}</td></tr>
+              <tr class="text-center" ng-repeat="state in ward.states" ng-show="ward.states.length">
                   <td>{{ state.date }}</td>
                   <td>{{ state.previous}}</td>
                   <td>{{ state.admissions}}</td>
@@ -61,7 +60,6 @@
                   <td>{{ state.females}}</td>
                   <td>{{ state.staffOnDuty}}</td>
                   <td>{{ state.students}}</td>
-                 </div>
               </tr>
             </tbody>
           </table>

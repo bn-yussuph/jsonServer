@@ -1,7 +1,6 @@
 <div class="text-center">
-  <p>Ward state Details component works.</p>
   <div class="col">
-    <div>
+    <div ng-show="$ctrl.wardState.length">
       <h1>STATTISTICS FOR {{$ctrl.ward.name | uppercase}}</h1>
       <div>
         <div>
@@ -48,5 +47,9 @@
         </div>
       </div>
     </div>
+    <div ng-hide="$ctrl.wardState.length">
+        <h1>No Data in {{$ctrl.ward.name}} ward yet!!!</h1>
+        <p>Please check again later, thank you!!!</p>
+      </div>
   </div>
 </div>
