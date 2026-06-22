@@ -1,2 +1,52 @@
-<div>
-    <p>Ward  state Details component works.</p>
+<div class="text-center">
+  <p>Ward state Details component works.</p>
+  <div class="col">
+    <div>
+      <h1>STATTISTICS FOR {{$ctrl.ward.name | uppercase}}</h1>
+      <div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr class="text-start">
+                <th scope="col" class="vertical-header">DATE</th>
+                <th scope="col" class="vertical-header">PREVIOUS</th>
+                <th scope="col" class="vertical-header">ADMISSIONS</th>
+                <th scope="col" class="vertical-header">DISCHARGES</th>
+                <th scope="col" class="vertical-header">TRANSINS</th>
+                <th scope="col" class="vertical-header">TRANSOUTS</th>
+                <th scope="col" class="vertical-header">REFERRED</th>
+                <th scope="col" class="vertical-header">CRITICALLY ILL</th>
+                <th scope="col" class="vertical-header">DEATHS</th>
+                <th scope="col" class="vertical-header">REMAINING</th>
+                <th scope="col" class="vertical-header">MALE</th>
+                <th scope="col" class="vertical-header">FEMALES</th>
+                <th scope="col" class="vertical-header">STAFF ON DUTY</th>
+                <th scope="col" class="vertical-header">STUDENTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="state in $ctrl.wardState">
+              
+                  <td>{{ state.date }}</td>
+                  <td>{{ state.previous}}</td>
+                  <td>{{ state.admissions}}</td>
+                  <td>{{ state.discharges}}</td>
+                  <td>{{ state.transins}}</td>
+                  <td>{{ state.transouts}}</td>
+                  <td>{{ state.referred}}</td>
+                  <td>{{ state.criticallyIll}}</td>
+                  <td>{{ state.deaths}}</td>
+                  <td>{{ state.remaining}}</td>
+                  <td>{{ state.males}}</td>
+                  <td>{{ state.females}}</td>
+                  <td>{{ state.staffOnDuty}}</td>
+                  <td>{{ state.students}}</td>
+                 </div>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

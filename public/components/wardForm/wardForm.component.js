@@ -7,10 +7,11 @@
                 wards: '<'
             },
             templateUrl: 'components/wardForm/wardForm.tpl.html',
-            controller: function wardFormCtrl($state, wardsSrvc) {
+            controller: function wardFormCtrl($state, cssInjector, wardsSrvc) {
                 this.name = 'Form name';
                 this.ward = {};
 
+                cssInjector.add('/components/wardForm/wardForm.css');
 
                 this.submitForm = function (form) {
                     console.log(form.$valid);

@@ -1,3 +1,4 @@
+
 # Angular specific
 /dist/
 /out-tsc/
@@ -8,7 +9,7 @@
 .angular/
 
 # Node modules and dependency files
-/node_modules/
+public/node_modules/
 /package-lock.json
 /yarn.lock
 

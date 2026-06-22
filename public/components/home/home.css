@@ -1,0 +1,11 @@
+.vertical-header {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg); /* Flips text so it reads bottom-to-top */
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Give the header row an explicit height matching your text length */
+.table-vertical-height th {
+  height: 150px; 
+}

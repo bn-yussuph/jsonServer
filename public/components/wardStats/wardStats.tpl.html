@@ -44,6 +44,26 @@
             Please select a ward.
           </div>
         </div>
+
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Remaining previous night</label>
+          <input
+            id="previous"
+            type="number"
+            class="form-control"
+            name="previous"
+            ng-model="$ctrl.stats.previous"
+            ng-class="{'is-invalid': wardStatsForm.previous.$invalid && wardStatsForm.previous.$touched}"
+            required
+          />
+          <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.previous.$error"
+          >
+            Enter a valid number.
+          </div>
+        </div>
       </div>
 
       <div class="row">
@@ -187,6 +207,26 @@
       </div>
 
       <div class="row">
+        <div class="form-group col mb-3">
+          <label class="col-form-label">Remaining at midnight</label>
+          <input
+            id="remaining"
+            type="number"
+            class="form-control"
+            name="remaining"
+            ng-model="$ctrl.stats.remaining"
+            ng-class="{'is-invalid': wardStatsForm.remaining.$invalid && wardStatsForm.remaining.$touched}"
+            required
+          />
+          <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.remaining.$error"
+          >
+            Enter a valid number.
+          </div>
+        </div>
+
         <div class="form-group col mb-3">
           <label class="col-form-label">No. of males</label>
           <input

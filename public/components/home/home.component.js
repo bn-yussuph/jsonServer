@@ -1,19 +1,23 @@
 (function () {
-	'use strict';
+    'use strict';
 
-	angular.module('wardApp')
-		.component('home', {
-			templateUrl: 'components/home/home.tpl.html',
-			controller: homeController,
-			bindings: {
+    angular.module('wardApp')
+        .component('home', {
+            templateUrl: 'components/home/home.tpl.html',
+            controller: homeController,
+            bindings: {
                 wards: '<'
-			}
-		});
-	homeController.$inject = ['$scope', 'wardsSrvc', 'wardStateSrvc', 'statsSrvc'];
-	function homeController($scope, wardsSrvc, wardStateSrvc, statsSrvc) {
+            }
+        });
+    homeController.$inject = ['$scope', 'cssInjector', 'wardsSrvc', 'wardStateSrvc', 'statsSrvc'];
+    function homeController($scope, cssInjector, wardsSrvc, wardStateSrvc, statsSrvc) {
+        
+        cssInjector.add('/components/home/home.css');
 
-        this.$onInit = function () {
-            
+               this.$onInit = function () {
+                this.hasContent = false;
+                // console.log(this.wards);
+
             wardsSrvc.getAllWardsWithStates()
                 .then(function (data) {
                     // console.log("onInit fired", data);
@@ -31,6 +35,10 @@
                 .catch(function (error) {
                     $scope.errorMessage = 'Failed to get stats';
                 });
+        }
+
+        this.$onDestroy = function(){
+            this.hasContent = false;
         }
     }
 

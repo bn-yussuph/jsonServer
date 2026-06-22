@@ -9,6 +9,7 @@
 			return $http.get(BASE_URL + 'wards')
 				.then(function (response) {
 					// Return only the data payload to the controller
+					// console.log(response.data);
 					return response.data;
 				})
 				.catch(function (error) {

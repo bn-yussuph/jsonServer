@@ -1,73 +1,70 @@
 <div class="container-fluid text-center">
-  
   <div class="row">
     <aside class="col-2">
-     <div class="nav text-start">
-      <h1>WARDS</h1>
-      <ul class="nav flex-column">
-        <li class="nav-item"  ng-repeat="ward in $ctrl.wards">
-          <a class="nav-link" aria-current="page" href="#" ui-sref="home.wardstatesdetail({wardId: ward.id})"
-                ui-sref-active="active">{{ward.name | uppercase}}</a>
-        </li>
-      </ul>
-    </div>
+      <div class="nav text-start">
+        <h1>WARDS</h1>
+        <ul class="nav flex-column">
+          <li class="nav-item" ng-repeat="ward in $ctrl.wards">
+            <a
+              class="nav-link"
+              aria-current="page"
+              href="#"
+              ui-sref="home.wardstatesdetail({wardId: ward.id})"
+              ui-sref-active="active"
+              >{{ward.name | uppercase}}</a
+            >
+          </li>
+        </ul>
+      </div>
     </aside>
-     
+   
     <div class="col">
       <ui-view></ui-view>
-      <div>
+      <div ng-hide="$ctrl.hasContent">
         <h1>STATTISTICS</h1>
         <div ng-repeat="ward in wardWithStates">
           <div ng-show="ward.states.length">
             <h2>{{ ward.name}}</h2>
             <table class="table">
-              <tr>
-                <th>DATE</th>
-                <th>ADMISSIONS</th>
-                <th>DISCHARGES</th>
-                <th>TRANSINS</th>
-                <th>TRANSOUTS</th>
-                <th>REMAINING</th>
+            <thead>
+              <tr class="text-start">
+                <th scope="col" class="vertical-header">DATE</th>
+                <th scope="col" class="vertical-header">PREVIOUS</th>
+                <th scope="col" class="vertical-header">ADMISSIONS</th>
+                <th scope="col" class="vertical-header">DISCHARGES</th>
+                <th scope="col" class="vertical-header">TRANSINS</th>
+                <th scope="col" class="vertical-header">TRANSOUTS</th>
+                <th scope="col" class="vertical-header">REFERRED</th>
+                <th scope="col" class="vertical-header">CRITICALLY ILL</th>
+                <th scope="col" class="vertical-header">DEATHS</th>
+                <th scope="col" class="vertical-header">REMAINING</th>
+                <th scope="col" class="vertical-header">MALE</th>
+                <th scope="col" class="vertical-header">FEMALES</th>
+                <th scope="col" class="vertical-header">STAFF ON DUTY</th>
+                <th scope="col" class="vertical-header">STUDENTS</th>
               </tr>
+            </thead>
+            <tbody>
               <tr ng-repeat="state in ward.states">
-                <td>{{ state.date | date }}</td>
-                <td>{{ state.admissions}}</td>
-                <td>{{ state.discharges}}</td>
-                <td>{{ state.transins}}</td>
-                <td>{{ state.transouts}}</td>
-                <td>{{ state.admissions}}</td>
+              
+                  <td>{{ state.date }}</td>
+                  <td>{{ state.previous}}</td>
+                  <td>{{ state.admissions}}</td>
+                  <td>{{ state.discharges}}</td>
+                  <td>{{ state.transins}}</td>
+                  <td>{{ state.transouts}}</td>
+                  <td>{{ state.referred}}</td>
+                  <td>{{ state.criticallyIll}}</td>
+                  <td>{{ state.deaths}}</td>
+                  <td>{{ state.remaining}}</td>
+                  <td>{{ state.males}}</td>
+                  <td>{{ state.females}}</td>
+                  <td>{{ state.staffOnDuty}}</td>
+                  <td>{{ state.students}}</td>
+                 </div>
               </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <h1>SUMMARIES</h1>
-      <div>
-        <div class="text-center" ng-repeat="stats in wardStats">
-          <div class="bg-primary row">
-            <div class="col">
-              <p>Date: {{stats.date}}</p>
-            </div>
-            <div class="col">
-              <p>Ward ID: {{stats.wardId}}</p>
-            </div>
-          </div>
-
-          <div class="row text-center">
-            <div class="col">
-              <table class="table table-striped">
-                <tr>
-                  <th>Statistic</th>
-                  <th>Value</th>
-                </tr>
-                <tr ng-repeat="(key, value) in stats.stats">
-                  <td>{{ key }}</td>
-                  <td>{{ value }}</td>
-                </tr>
-              </table>
-            </div>
+            </tbody>
+          </table>
           </div>
         </div>
       </div>

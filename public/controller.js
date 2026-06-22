@@ -7,8 +7,6 @@
 			$scope.title = "Ward Application";
 			// $scope.ward = {};
 
-			
-
 			$scope.submitForm = function () {
 				return wardsSrvc.addData()
 					.then(function (success) {

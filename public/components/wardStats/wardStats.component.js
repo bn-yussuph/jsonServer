@@ -11,9 +11,11 @@
         templateUrl: 'components/wardStats/wardStats.tpl.html'
     });
 
-    WardStatsController.$inject = ['$state', '$filter', 'wardStateSrvc'];
-    function WardStatsController($state, $filter, wardStateSrvc) {
+    WardStatsController.$inject = ['$state', '$filter', 'cssInjector', 'wardStateSrvc'];
+    function WardStatsController($state, $filter, cssInjector, wardStateSrvc) {
         this.stats = {};
+
+        cssInjector.add('/components/wardStats/wardStats.css');
 
         this.submitStats = function (form) {
             // console.log(form);
