@@ -19,7 +19,7 @@
             ng-class="{'is-invalid': wardStatsForm.date.$invalid && wardStatsForm.date.$touched}"
             required
           />
-           <!-- <label for="date" class="col-form-label">Date</label> -->
+          <!-- <label for="date" class="col-form-label">Date</label> -->
           <div class="invalid-feedback" ng-show="wardStatsForm.date.$error">
             Enter a valid date.
           </div>
@@ -53,15 +53,13 @@
             class="form-control"
             name="previous"
             ng-model="$ctrl.stats.previous"
+            previous-validator
             ng-class="{'is-invalid': wardStatsForm.previous.$invalid && wardStatsForm.previous.$touched}"
             required
           />
           <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
-          <div
-            class="invalid-feedback"
-            ng-show="wardStatsForm.previous.$error"
-          >
-            Enter a valid number.
+          <div class="invalid-feedback" ng-show="wardStatsForm.previous.$error">
+            Please enter a valid remaining.
           </div>
         </div>
       </div>
@@ -167,12 +165,12 @@
             ng-class="{'is-invalid': wardStatsForm.criticallyIll.$invalid && wardStatsForm.criticallyIll.$touched}"
             required
           />
-            <div
-                class="invalid-feedback"
-                ng-show="wardStatsForm.criticallyIll.$error"
-            >
-              Enter a valid number.
-            </div>
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.criticallyIll.$error"
+          >
+            Enter a valid number.
+          </div>
         </div>
 
         <div class="form-group col">
@@ -185,9 +183,9 @@
             ng-class="{'is-invalid': wardStatsForm.deaths.$invalid && wardStatsForm.deaths.$touched}"
             required
           />
-            <div class="invalid-feedback" ng-show="wardStatsForm.deaths.$error">
-                Enter a valid number.
-            </div>
+          <div class="invalid-feedback" ng-show="wardStatsForm.deaths.$error">
+            Enter a valid number.
+          </div>
         </div>
 
         <div class="form-group col">
@@ -200,9 +198,9 @@
             ng-class="{'is-invalid': wardStatsForm.theatre.$invalid && wardStatsForm.theatre.$touched}"
             required
           />
-            <div class="invalid-feedback" ng-show="wardStatsForm.theatre.$error">
-                Enter a valid number.
-            </div>
+          <div class="invalid-feedback" ng-show="wardStatsForm.theatre.$error">
+            Enter a valid number.
+          </div>
         </div>
       </div>
 
@@ -215,6 +213,7 @@
             class="form-control"
             name="remaining"
             ng-model="$ctrl.stats.remaining"
+            remaining-validator
             ng-class="{'is-invalid': wardStatsForm.remaining.$invalid && wardStatsForm.remaining.$touched}"
             required
           />
@@ -223,7 +222,8 @@
             class="invalid-feedback"
             ng-show="wardStatsForm.remaining.$error"
           >
-            Enter a valid number.
+            <p ng-message="required">This field is required.</p>
+            <p ng-message="remaining-validator">The number of remaining patients does not match the calculated value.</p>
           </div>
         </div>
 
@@ -234,12 +234,13 @@
             class="form-control"
             name="males"
             ng-model="$ctrl.stats.males"
+            ng-change="$ctrl.updateFemales()"
             ng-class="{'is-invalid': wardStatsForm.males.$invalid && wardStatsForm.males.$touched}"
             required
           />
-            <div class="invalid-feedback" ng-show="wardStatsForm.males.$error">
-                Enter a valid number.
-            </div>
+          <div class="invalid-feedback" ng-show="wardStatsForm.males.$error">
+            Enter a valid number.
+          </div>
         </div>
 
         <div class="form-group col">
@@ -252,9 +253,9 @@
             ng-class="{'is-invalid': wardStatsForm.females.$invalid && wardStatsForm.females.$touched}"
             required
           />
-            <div class="invalid-feedback" ng-show="wardStatsForm.females.$error">
-                Enter a valid number.
-            </div>
+          <div class="invalid-feedback" ng-show="wardStatsForm.females.$error">
+            Enter a valid number.
+          </div>
         </div>
       </div>
 
@@ -269,12 +270,12 @@
             ng-class="{'is-invalid': wardStatsForm.staffOnDuty.$invalid && wardStatsForm.staffOnDuty.$touched}"
             required
           />
-            <div
-                class="invalid-feedback"
-                ng-show="wardStatsForm.staffOnDuty.$error"
-            >
-              Enter a valid number.
-            </div>
+          <div
+            class="invalid-feedback"
+            ng-show="wardStatsForm.staffOnDuty.$error"
+          >
+            Enter a valid number.
+          </div>
         </div>
 
         <div class="form-group col">
@@ -287,12 +288,9 @@
             ng-class="{'is-invalid': wardStatsForm.students.$invalid && wardStatsForm.students.$touched}"
             required
           />
-            <div
-                class="invalid-feedback"
-                ng-show="wardStatsForm.students.$error"
-            >
-              Enter a valid number.
-            </div>
+          <div class="invalid-feedback" ng-show="wardStatsForm.students.$error">
+            Enter a valid number.
+          </div>
         </div>
       </div>
 

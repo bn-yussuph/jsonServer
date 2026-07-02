@@ -22,7 +22,7 @@
                 component: 'wardStatesDetail',
                 resolve: {
                     ward: function (wards, $stateParams) {
-                        for (let i = 0; i <wards.length; i++) {
+                        for (let i = 0; i < wards.length; i++) {
                             if (wards[i].id === $stateParams.wardId) {
                                 return wards[i];
                             }

@@ -34,13 +34,7 @@
 		}
 
 		this.getWardStateByIdAndData = function (wardId, date) {
-			var params = {
-				params: {
-					wardId: wardId,
-					date: date
-				}
-			}
-			return $http.get(BASE_URL + 'states', params)
+			return $http.get(BASE_URL + 'states?wardId=' + wardId + '&date=' + date)
 				.then(function (res) {
 					console.log(res)
 					return res.data;

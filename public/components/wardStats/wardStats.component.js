@@ -35,15 +35,9 @@
 
         }
 
-        // this.$onInit = function () {
-        //     wardsSrvc.getAllWards()
-        //         .then(function (success) {
-        //             console.log(success.data);
-        //             this.wards = success.data;
-        //         })
-        //         .catch(function (error) {
-        //             console.log(error);
-        //         })
-        // }
+        this.updateFemales = function () {
+            this.stats.females = this.stats.remaining - this.stats.males;
+            console.log("females: ", this.stats.females);
+        };
     }
 })();
