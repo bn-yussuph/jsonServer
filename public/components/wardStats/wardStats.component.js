@@ -19,9 +19,10 @@
 
         this.submitStats = function (form) {
             // console.log(form);
+            // console.log(wardStatsForm);
             var formatedDate = $filter('date')(form.date, 'yyyy-MM-dd');
             form.date = formatedDate;
-            console.log(form);
+            // console.log(form);
                 var result = wardStateSrvc.addWardState(form)
                     .then(function (success) {
                         $state.reload();

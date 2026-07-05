@@ -58,8 +58,8 @@
             required
           />
           <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
-          <div class="invalid-feedback" ng-show="wardStatsForm.previous.$error">
-            Please enter a valid remaining.
+          <div class="invalid-feedback" ng-if="wardStatsForm.previous.$error">
+            Please set date and choose a ward.
           </div>
         </div>
       </div>
@@ -220,7 +220,7 @@
           <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
           <div
             class="invalid-feedback"
-            ng-show="wardStatsForm.remaining.$error"
+            ng-if="wardStatsForm.remaining.$error"
           >
             <p ng-message="required">This field is required.</p>
             <p ng-message="remaining-validator">The number of remaining patients does not match the calculated value.</p>
