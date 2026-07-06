@@ -5,7 +5,7 @@
 
     app.service('excelSrvc', ['$q', excelSrvcFxn]);
 
-    function excelSrvcFxn() {
+    function excelSrvcFxn($q) {
         return {
             exportToExcel: function (fileName, sheetName, headers, dataList) {
                 var deferred = $q.defer();
@@ -49,6 +49,46 @@
                         // Trigger download via FileSaver
                         saveAs(blob, fileName + '.xlsx');
                         deferred.resolve(true);
+                    }).catch(function (error) {
+                        deferred.reject(error);
+                    });
+
+                } catch (error) {
+                    deferred.reject(error);
+                }
+
+                return deferred.promise;
+            },
+
+            readFromExcel: function (file) {
+                console.log("excelSrvc.readFromExcel called with file: ", file);
+                var deferred = $q.defer();
+
+                try {
+                    const workbook = new ExcelJS.Workbook();
+                    workbook.xlsx.readFile(file).then(function () {
+                        const worksheet = workbook.getWorksheet('Sheet1');
+                        const dataRows = worksheet.getSheetValues().slice(5).slice(0, -2);
+                        var jsonData = [];
+
+                        dataRows.forEach((rowArray, index) => {
+                            rowArray = rowArray.slice(4);
+                            if (index === 0) {
+                                let date = rowArray[0];
+                                jsonData.push({ date: date });
+                            }
+                            let key = (typeof (rowArray[0]) === 'object') ? rowArray[0].richText[0].text : rowArray[0];
+                            let wardKey = 0;
+                            for (var i = 1; i < rowArray.length; i++) {
+                                if (wardKey === jsonData.length) {
+                                    break;
+                                }
+                                jsonData[wardKey][key] = (typeof (rowArray[i]) === 'object') ? rowArray[i].result : rowArray[i];
+                                wardKey++;
+                            }
+                        });
+
+                        deferred.resolve(jsonData);
                     }).catch(function (error) {
                         deferred.reject(error);
                     });

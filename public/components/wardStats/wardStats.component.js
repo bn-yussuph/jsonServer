@@ -11,11 +11,39 @@
         templateUrl: 'components/wardStats/wardStats.tpl.html'
     });
 
-    WardStatsController.$inject = ['$state', '$filter', 'cssInjector', 'wardStateSrvc'];
-    function WardStatsController($state, $filter, cssInjector, wardStateSrvc) {
+    WardStatsController.$inject = ['$state', '$filter', 'cssInjector', 'wardStateSrvc', 'excelSrvc'];
+    function WardStatsController($state, $filter, cssInjector, wardStateSrvc, excelSrvc ) {
         this.stats = {};
+        this.file = null;
 
         cssInjector.add('/components/wardStats/wardStats.css');
+
+        this.uploadFile = function () {
+            console.log("Uploading file: ", this.file);
+
+            var file = new FormData();
+            file.append('file', this.file);
+
+            wardStateSrvc.uploadFile(file)
+                .then(function (success) {
+                    console.log("File uploaded successfully: ", success);
+                })
+                .catch(function (error) {
+                    console.error("Error uploading file: ", error);
+                });
+
+            // const wardStates = excelSrvc.readFromExcel(formData);
+            // console.log("wardStates: ", wardStates);
+            // You can also send the formData to your backend if needed
+            // Example:
+            // wardStateSrvc.uploadFile(formData)
+            //     .then(function (success) {
+            //         console.log(success);
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            //     });
+        }
 
         this.submitStats = function (form) {
             // console.log(form);

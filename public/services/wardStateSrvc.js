@@ -74,6 +74,21 @@
 					throw error;
 				});
 		}
+
+		this.uploadFile = function (formData) {
+			return $http.post('localhost:4000/upload-file' , formData, {
+				transformRequest: angular.identity,
+				headers: { 'Content-Type': undefined }
+			})
+				.then(function (res) {
+					console.log(res)
+					return res.data;
+				})
+				.catch(function (error) {
+					console.log(error);
+					throw error;
+				});
+		}	
 	}
 
 })()

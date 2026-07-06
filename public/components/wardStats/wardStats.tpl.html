@@ -1,6 +1,18 @@
 <div class="container">
   <div>
     <h1 class="text-center text-primary">ADD WARD STATES</h1>
+    <div class="row">
+      <form
+        name="wardStatsSheetForm"
+        ng-submit="$ctrl.uploadFile()"
+        class="row"
+        novalidate
+      >
+        <label for="file" class="col-form-label col">UPLOAD AN EXCEL SHEET</label>
+        <input type="file" file-model="$ctrl.file" class="col" />
+        <button class="btn btn-primary col">Upload</button>
+      </form>
+    </div>
     <form
       name="wardStatsForm"
       ng-submit="$ctrl.submitStats($ctrl.stats)"
@@ -218,12 +230,12 @@
             required
           />
           <!-- <label for="admissions" class="col-form-label">Admissions</label> -->
-          <div
-            class="invalid-feedback"
-            ng-if="wardStatsForm.remaining.$error"
-          >
+          <div class="invalid-feedback" ng-if="wardStatsForm.remaining.$error">
             <p ng-message="required">This field is required.</p>
-            <p ng-message="remaining-validator">The number of remaining patients does not match the calculated value.</p>
+            <p ng-message="remaining-validator">
+              The number of remaining patients does not match the calculated
+              value.
+            </p>
           </div>
         </div>
 
@@ -293,10 +305,14 @@
           </div>
         </div>
       </div>
-
-      <button class="btn btn-primary" ng-disabled="wardStatsForm.$invalid">
-        Submit
-      </button>
+      <div class="row">
+        <button
+          class="btn btn-primary col"
+          ng-disabled="wardStatsForm.$invalid"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </div>
 </div>

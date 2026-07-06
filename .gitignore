@@ -10,6 +10,7 @@
 
 # Node modules and dependency files
 public/node_modules/
+/node_modules
 /package-lock.json
 /yarn.lock
 

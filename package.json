@@ -1,0 +1,17 @@
+{
+  "name": "nodejson",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Sulemana Hajjaj",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "json-server": "^0.17.4",
+    "multer": "^2.2.0"
+  }
+}
