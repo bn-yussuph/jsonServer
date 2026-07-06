@@ -31,18 +31,6 @@
                 .catch(function (error) {
                     console.error("Error uploading file: ", error);
                 });
-
-            // const wardStates = excelSrvc.readFromExcel(formData);
-            // console.log("wardStates: ", wardStates);
-            // You can also send the formData to your backend if needed
-            // Example:
-            // wardStateSrvc.uploadFile(formData)
-            //     .then(function (success) {
-            //         console.log(success);
-            //     })
-            //     .catch(function (error) {
-            //         console.log(error);
-            //     });
         }
 
         this.submitStats = function (form) {

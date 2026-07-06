@@ -39,13 +39,13 @@
                 //     }
                 // });
 
-                // element.bind('change', function () {
-                //     scope.$apply(function () {
-                //         // Store the raw File object into the scope variable
-                //         model.assign(scope, element[0].files[0]);
-                //         console.log(scope.$ctrl.file);
-                //     });
-                // });
+                element.bind('change', function () {
+                    scope.$apply(function () {
+                        // Store the raw File object into the scope variable
+                        model.assign(scope, element[0].files[0]);
+                        console.log(scope.$ctrl.file);
+                    });
+                });
 
             }
         };
