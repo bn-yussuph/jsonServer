@@ -300,5 +300,13 @@
       "id": "1"
     }
   ],
+  "files": [
+    {
+      "id": 1783367809522,
+      "fileName": "night.xlsx",
+      "url": "http://localhost:3000/uploads/1783367809513.xlsx",
+      "uploadedAt": "2026-07-06T19:56:49.522Z"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

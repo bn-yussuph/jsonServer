@@ -8,6 +8,8 @@ const server = jsonServer.create();
 const router = jsonServer.router('wards.json');
 const middlewares = jsonServer.defaults();
 
+const readExcelFile = require('./src/excel/readExcelFile').readExcelFile;
+
 server.use(cors());
 
 // Configure where to save uploaded files
@@ -31,7 +33,7 @@ server.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 server.use(jsonServer.defaults({ static: path.join(__dirname, 'public') }));
 
 // Custom Route for File Uploads
-server.post('/upload-file', upload.single('file'), (req, res) => {
+server.post('/upload-file', upload.single('file'), async (req, res) => {
 	console.log('upload route hit.')
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
@@ -50,6 +52,8 @@ server.post('/upload-file', upload.single('file'), (req, res) => {
   };
 
   db.get('files').push(newRecord).write();
+  const data = await readExcelFile(req.file.path);
+  console.log("File content read and processed:", data);
 
   // Return the record back to the client
   res.status(201).json(newRecord);
