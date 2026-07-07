@@ -1,14 +1,24 @@
-const jsonServer = require('json-server');
-const multer = require('multer');
-const path = require('path');
-const express = require('express');
-const cors = require('cors');
+// const jsonServer = require('json-server');
+// const multer = require('multer');
+// const path = require('path');
+// const express = require('express');
+// const cors = require('cors');
+
+import jsonServer from "json-server";
+import multer from "multer";
+import { path } from "path";
+import express from "express";
+import cors from "cors";
+
+
+
 
 const server = jsonServer.create();
 const router = jsonServer.router('wards.json');
 const middlewares = jsonServer.defaults();
 
-const readExcelFile = require('./src/excel/readExcelFile').readExcelFile;
+// const readExcelFile = require('./src/excel/readExcelFile').readExcelFile;
+import { readExcelFile } from "./src/excel/readExcelFile.js";
 
 server.use(cors());
 

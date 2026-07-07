@@ -46,6 +46,7 @@
     });
     // console.log(JSON.stringify(jsonData));
     console.log(jsonData);
+    return jsonData;
   }
 
   exports.readExcelFile = readExcelFile;
