@@ -21,7 +21,8 @@
                     let date = new Date(scope.$ctrl.stats.date);
                     date.setDate(date.getDate() - 1); // Subtract one day
                     console.log(date);
-                    var formatedDate = $filter('date')(date, 'yyyy-MM-dd');
+                    var formatedDate = $filter('date')(date, 'dd-MM-yyyy');
+                    console.log("FormatedDated", formatedDate);
 
                     if (!scope.$ctrl.stats.wardId && !scope.$ctrl.stats.date) {
                         console.error("wardId or date is not defined in stats object.");
@@ -31,7 +32,7 @@
                     wardStateSrvc.getWardStateByIdAndData(scope.$ctrl.stats.wardId, formatedDate)
                         .then(function (res) {
                             console.log("Ward state data retrieved:", res);
-                            const previousValue = res.length > 0 ? res[0].previous : 0;
+                            const previousValue = res.length > 0 ? res[0].remaining : 0;
                             const isValid = previous === previousValue;
                             ngModel.$setViewValue(previousValue);
                             ngModel.$render();

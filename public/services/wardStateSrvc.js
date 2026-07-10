@@ -76,7 +76,7 @@
 		}
 
 		this.uploadFile = function (formData) {
-			return $http.post('http://localhost:4000/upload-file' , formData, {
+			return $http.post('http://localhost:3000/upload-file' , formData, {
 				transformRequest: angular.identity,
 				headers: { 'Content-Type': undefined }
 			})

@@ -6,11 +6,15 @@
 
 import jsonServer from "json-server";
 import multer from "multer";
-import { path } from "path";
+import path from "path";
 import express from "express";
 import cors from "cors";
+import 'dotenv/config';
 
+console.log(process.env.BASE_URL);
 
+import transformExcel from "./src/excel/transformExcel.js";
+import statsSrvc from "./src/services/StatsSrvc.js";
 
 
 const server = jsonServer.create();
@@ -18,7 +22,7 @@ const router = jsonServer.router('wards.json');
 const middlewares = jsonServer.defaults();
 
 // const readExcelFile = require('./src/excel/readExcelFile').readExcelFile;
-import { readExcelFile } from "./src/excel/readExcelFile.js";
+// import { readExcelFile } from "./src/excel/readExcelFile.js";
 
 server.use(cors());
 
@@ -39,8 +43,8 @@ server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
 // Serve the uploaded files statically so they are accessible via URL
-server.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-server.use(jsonServer.defaults({ static: path.join(__dirname, 'public') }));
+server.use('/uploads', express.static(path.join(import.meta.dirname, 'uploads')));
+server.use(jsonServer.defaults({ static: path.join(import.meta.dirname, 'public') }));
 
 // Custom Route for File Uploads
 server.post('/upload-file', upload.single('file'), async (req, res) => {
@@ -62,16 +66,20 @@ server.post('/upload-file', upload.single('file'), async (req, res) => {
   };
 
   db.get('files').push(newRecord).write();
-  const data = await readExcelFile(req.file.path);
-  console.log("File content read and processed:", data);
+  const data = await transformExcel.readExcelFile(req.file.path);
+  const transformedData = transformExcel.transformKeys(data);
+  const statesData = await transformExcel.addWardIds(transformedData);
+  // console.log("Transformed Data with Ward IDs: ", statesData);
+  const states = await statsSrvc.addWardStates(statesData);
+  console.log("File content read and processed:", states);
 
   // Return the record back to the client
-  res.status(201).json(newRecord);
+  res.status(201).json(states);
 });
 
 // Use standard router for all other endpoints
 server.use('/api', router);
 
-server.listen(4000, () => {
+server.listen(3000, () => {
   console.log('JSON Server with Upload functionality is running on port 3000');
 });
